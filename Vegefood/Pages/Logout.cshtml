@@ -1,0 +1,19 @@
+﻿@page
+@model Vegefood.Pages.LogoutModel
+@{
+    ViewData["Title"] = "Logout";
+}
+<section class="ftco-section bg-light">
+
+    <div class="row m-5">
+        <div class="col-md-4">
+            <form method="post">
+                <p>Are you sure you want to log out?</p>
+                <p>
+                    <button class="btn btn-primary" asp-page-handler="Logout">Yes</button>
+                    <button class="btn btn-light ml-5 border-dark" asp-page-handler="DontLogout">No</button>
+                </p>
+            </form>
+        </div>
+    </div>
+</section>

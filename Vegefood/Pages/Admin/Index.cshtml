@@ -1,0 +1,29 @@
+﻿@page
+@model Vegefood.Pages.Admin.IndexModel
+@{
+    ViewData["Title"] = "Admin";
+}
+<section class="ftco-section bg-color-3">
+
+<div class="container">
+    <h1 class="text-center text-white">
+        Hello Administrator!
+    </h1>
+    <br />
+    <div class="row  text-center ">
+        <div class="col">
+            <a href="/Inventory">
+                    <img width="300" height="300" src="https://cdn-icons-png.flaticon.com/512/7656/7656399.png" alt="...">
+            </a>
+                <h2 class="text-white">Inventory</h2>
+        </div>
+        <div class="col">
+            <a href="/Order">
+                    <img width="300" height="300" src="https://uxwing.com/wp-content/themes/uxwing/download/e-commerce-currency-shopping/order-placed-purchased-icon.svg" alt="...">
+            </a>
+                <h2 class="text-white">See Orders</h2>
+        </div>
+       
+    </div>
+</div>
+</section>

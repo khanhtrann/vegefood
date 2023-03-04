@@ -1,0 +1,66 @@
+﻿@page
+@model Vegefood.Pages.RegisterModel
+@{
+    ViewData["Title"] = "Register";
+
+}
+
+<section class="ftco-section bg-light">
+
+    <div class="row m-5">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Model.Email" class="control-label"></label>
+                    <input asp-for="Model.Email" class="form-control" />
+                    <span asp-validation-for="Model.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Model.Password" class="control-label"></label>
+                    <input asp-for="Model.Password" class="form-control" />
+                    <span asp-validation-for="Model.Password" type="password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Model.ConfirmPassword" class="control-label"></label>
+                    <input asp-for="Model.ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="Model.ConfirmPassword" type="password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Model.FirstName" class="control-label"></label>
+                    <input asp-for="Model.FirstName" class="form-control" />
+                    <span asp-validation-for="Model.FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Model.LastName" class="control-label"></label>
+                    <input asp-for="Model.LastName" class="form-control" />
+                    <span asp-validation-for="Model.LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Model.Address" class="control-label"></label>
+                    <input asp-for="Model.Address" class="form-control" />
+                    <span asp-validation-for="Model.Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Model.City" class="control-label"></label>
+                    <input asp-for="Model.City" class="form-control" />
+                    <span asp-validation-for="Model.City" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Model.Province" class="control-label"></label>
+                    <input asp-for="Model.Province" class="form-control" />
+                    <span asp-validation-for="Model.Province" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Model.Zip" class="control-label"></label>
+                    <input asp-for="Model.Zip" class="form-control" />
+                    <span asp-validation-for="Model.Zip" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Register" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

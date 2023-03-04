@@ -1,0 +1,67 @@
+﻿@page
+@model Vegefood.Pages.OrderModel
+@{
+    ViewData["Title"] = "Orders";
+
+}
+
+<div class="container">
+    <h1>Orders</h1>
+    <table class="table text-center">
+        <thead class="thead-primary">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().Timestamp)
+                </th>
+                <th>
+                    Total
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.Orders)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => order.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => order.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => order.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => order.Timestamp)
+                    </td>
+                    @{
+                        decimal subtotal = 0;
+                        foreach (var orderItem in Model.OrderItems.Where(orderItem => orderItem.OrderID == order.ID))
+                        {
+                            subtotal += orderItem.Quantity * orderItem.Product.Price;
+                        }
+                    }
+                    @{
+                        double finalTotal = Decimal.ToDouble(subtotal);
+                    }
+                    <td>
+                        $@finalTotal.ToString("F")
+                    </td>
+                    <td>
+                        <a href="/OrderDetail/@Html.DisplayFor(modelItem => order.ID)">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
